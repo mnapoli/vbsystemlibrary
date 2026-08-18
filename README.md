@@ -1,4 +1,4 @@
-# VbSystemLibrary — archive
+# VbSystemLibrary
 
 Remise en ligne de [vbsystemlibrary.free.fr](http://vbsystemlibrary.free.fr/), le
 premier site que j'ai écrit, en 2007 : une bibliothèque communautaire de code
