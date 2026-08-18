@@ -1,40 +1,40 @@
 # VbSystemLibrary
 
-Remise en ligne de [vbsystemlibrary.free.fr](http://vbsystemlibrary.free.fr/), le
-premier site que j'ai écrit, en 2007 : une bibliothèque communautaire de code
-Visual Basic (accès système Windows via API), avec forum, commentaires, news et
-livre d'or.
+Bringing back online [vbsystemlibrary.free.fr](http://vbsystemlibrary.free.fr/), the
+first website I ever wrote, in 2007: a community library of Visual Basic code
+(Windows system access through the API), with a forum, comments, news and a
+guestbook.
 
-Le site tournait en PHP 4/5 + MySQL sur les pages perso de Free. Après une mise à
-jour de PHP côté Free en 2026, il renvoyait une erreur 500, et la base de données avait été
-supprimée. Ce dépôt le fait revivre **en lecture seule**, sur AWS Lambda.
+The site ran on PHP 4/5 + MySQL on Free's personal hosting. After Free upgraded PHP
+in 2026, it started returning a 500 error, and the database had been deleted. This
+repository brings it back to life **read only**, on AWS Lambda.
 
-## Le principe : PHP serverless moderne portant du PHP legacy
+## The idea: modern serverless PHP hosting legacy PHP
 
-Le code d'origine (2007) n'a pas été touché. Il utilise des balises courtes,
-l'extension `mysql` supprimée depuis PHP 7, et une fonction nommée `GoTo`
-(devenue mot réservé en PHP 5.3). Il exige donc **PHP 5.6** pour s'exécuter tel
-quel, la seule retouche est le renommage mécanique `GoTo` → `Redirect`.
+The original code (2007) has not been touched. It uses short tags, the `mysql`
+extension removed since PHP 7, and a function named `GoTo` (which became a reserved
+word in PHP 5.3). It therefore requires **PHP 5.6** to run as is, the only change
+being the mechanical rename `GoTo` → `Redirect`.
 
-L'image Lambda fait cohabiter deux PHP :
+The Lambda image runs two PHP versions side by side:
 
 ```
-Événement Lambda ─▶ Bref v3 (PHP 8.x, Amazon Linux 2023)
-                      └─▶ runtime/handler.php
-                            └─▶ Php56Proxy ──(CGI)──▶ php-cgi 5.6 ──▶ le site 2007
+Lambda event ─▶ Bref v3 (PHP 8.x, Amazon Linux 2023)
+                  └─▶ runtime/handler.php
+                        └─▶ Php56Proxy ──(CGI)──▶ php-cgi 5.6 ──▶ the 2007 site
 ```
 
-- **Bref** porte la boucle Lambda Runtime API sur un PHP 8 moderne.
-- Le handler traduit la requête HTTP en appel **`php-cgi` 5.6** (compilé sur la
-  même Amazon Linux 2023 pour la compatibilité binaire), sert les fichiers
-  statiques, et reconstruit la réponse.
-- La base MySQL d'origine est remplacée par un **fichier SQLite embarqué**. Un
-  *shim* `mysql_*` → PDO/SQLite (chargé via `auto_prepend_file`, sans modifier le
-  code du site) traduit les appels ; les écritures sont ignorées (lecture seule).
+- **Bref** carries the Lambda Runtime API loop on a modern PHP 8.
+- The handler translates the HTTP request into a **`php-cgi` 5.6** call (compiled on
+  the same Amazon Linux 2023 for binary compatibility), serves static files, and
+  rebuilds the response.
+- The original MySQL database is replaced by an **embedded SQLite file**. A `mysql_*`
+  to PDO/SQLite *shim* (loaded through `auto_prepend_file`, without touching the site
+  code) translates the calls; writes are ignored (read only).
 
-## Développement local
+## Local development
 
-Faire tourner le site directement en PHP 5.6 + SQLite (sans la couche Lambda) :
+Run the site directly on PHP 5.6 + SQLite (without the Lambda layer):
 
 ```bash
 docker run --rm -p 8099:8080 \
@@ -45,10 +45,10 @@ docker run --rm -p 8099:8080 \
 # http://localhost:8099/
 ```
 
-Tester toute la chaîne Bref/PHP 8 → php-cgi 5.6 dans l'image de déploiement :
+Test the full Bref/PHP 8 to php-cgi 5.6 chain in the deployment image:
 
 ```bash
 docker build -t vbsyslib:local .
 docker run --rm -p 8099:8080 vbsyslib:local \
-  /opt/bin/php runtime/local-server.php -S 0.0.0.0:8080   # serveur de test local
+  /opt/bin/php runtime/local-server.php -S 0.0.0.0:8080   # local test server
 ```
