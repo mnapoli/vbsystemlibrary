@@ -1,0 +1,106 @@
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les post du forum */
+Div.PostTitle {
+	color: white;
+	text-indent: 10px;
+	border-color: #2B295B;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	background-color: #B2B1DB;
+	padding: 3px;
+}
+Div.PostContent {
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	background-color: #E3E3F8;
+	padding: 10px
+	/* overflow: auto; */
+}
+div.PostAuteur {
+	font-size: 10px;
+	white-space: nowrap;
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	margin-left: 2%;
+	padding: 5%;
+	float: left;
+	width: 20%;
+}
+div.PostText {
+	font-size: 12px;
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	padding: 1%;
+	text-indent: 10px;
+	margin-left: 34%;
+	margin-right: 2%;
+	width: 62%;
+}
+td.PostAuteur {
+	font-size: 10px;
+	white-space: nowrap;
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	padding: 10px;
+	width: 100px;
+}
+td.PostText {
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	padding: 10px;
+	width: 100%;
+}
+div.ReplyText {
+	font-size: 10px;
+	border-color: #B2B1DB;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	padding: 10px;
+}
+div.PostGestion {
+	font-size: 10px;
+	padding-right: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #B2B1DB;
+	background-color: #E3E3F8;
+	text-indent: 10px
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* La liste des post du forum */
+table.forumPost {
+	text-align: left;
+	width: 95%;
+	border-color: #2B295B;
+	border-width: 1px;
+	border-style: solid;
+}
+th.forumPost {
+	font-weight: bold;
+	font-size: 12px;
+	color: #2B295B;
+	background-color: #E3E3F8;
+	border-color: #2B295B;
+	border-width: 1px;
+	border-style: solid;
+}
+td.forumPost {
+	font-weight: normal;
+	font-size: 11px;
+	padding: 2px;
+	border-color: #E3E3F8;
+	border-width: 1px;
+	border-style: solid;
+}

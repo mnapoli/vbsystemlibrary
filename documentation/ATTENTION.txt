@@ -1,0 +1,5 @@
+nom des fichiers en minuscules
+
+ne pas changer vbsyslib.html !
+
+Mettre à jour uniquement le contenu du dossier /vbsyslib/

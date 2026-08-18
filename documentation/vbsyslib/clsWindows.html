@@ -1,0 +1,164 @@
+<HTML><HEADER><TITLE>CLASSE : clsWindows</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : clsWindows</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+GetWindow
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+Window
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetWindowCaption
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+SetWindowCaption
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>ByVal Caption As String&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetWindowPosition
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+RECT
+</TD></TR>
+<TR><TD>
+SetWindowPosition
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>Optional ByVal Left As Variant,<BR>Optional Top As Variant,<BR>Optional Width As Variant,<BR>Optional Height As Variant&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnableWindowOpacity
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+ChangeWindowOpacity
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>ByVal Alpha As Byte&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DisableWindowOpacity
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+WindowVisible
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShowWindow
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+HideWindow
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+RenameWindow
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>ByVal Caption As String&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+WindowEnabled
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetWindowEnabled
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+SetWindowDisabled
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CloseWindow
+</TD><TD>Public
+</TD><TD>hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+EnableCloseButton
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DisableCloseButton
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+GetWindowClass
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsTask
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+GetWindowParentProcess
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetWindowParentThreadID
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+ListWindows
+</TD><TD>Public
+</TD><TD>ByRef tabHWnd() As Long&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

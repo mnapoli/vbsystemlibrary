@@ -1,0 +1,222 @@
+<HTML><HEADER><TITLE>CLASSE : Folder</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : Folder</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+SetPath
+</TD><TD>Friend
+</TD><TD>Path As String,<BR>Optional ByVal RefreshInformations As Boolean = True&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Copy
+</TD><TD>Public
+</TD><TD>ByVal Destination As String&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+Delete
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Move
+</TD><TD>Public
+</TD><TD>ByVal Destination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+ShowPropertyBox
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+MoveToTrash
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+Rename
+</TD><TD>Public
+</TD><TD>ByVal NewName As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DoesFolderExist
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+IsFolderAvailable
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ChangeAttributes
+</TD><TD>Public
+</TD><TD>ByVal NewAttributes As FileAttributes&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+GetIcon
+</TD><TD>Public
+</TD><TD>ByVal Size As IconSize&nbsp;</TD><TD>
+IPictureDisp
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Crypt
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+Decrypt
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetDates
+</TD><TD>Public
+</TD><TD>Optional ByVal DateCreated As String = vbNullString,<BR>Optional ByVal DateLastAccess As String = vbNullString,<BR>Optional ByVal DateLastModification As String = vbNullString&nbsp;</TD><TD>
+Long
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+RefreshInfos
+</TD><TD>Public
+</TD><TD>&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Class_Initialize
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+<TR><TD>
+Class_Terminate
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="propriete">Propri&eacute;t&eacute;s</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type</TH></TR>
+<TR><TD>
+Drive
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Path
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+Attributes
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DateCreated
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+DateLastModified
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DateLastAccessed
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+IsHidden
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsReadOnly
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+IsSystem
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsNormal
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+ParentFolderName
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShortPath
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+IsCompressed
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsArchive
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+DriveName
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

@@ -1,0 +1,138 @@
+<HTML><HEADER><TITLE>CLASSE : PhysicalDisk</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : PhysicalDisk</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+SetDiskNumber
+</TD><TD>Friend
+</TD><TD>DiskNumber As Byte,<BR>Optional ByVal RefreshInformations As Boolean = True&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ReadPhysicalDiskString
+</TD><TD>Public
+</TD><TD>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+WritePhysicalDiskString
+</TD><TD>Public
+</TD><TD>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal StringToWrite As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Sanitize
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+IsDiskAvailable
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+RefreshInfos
+</TD><TD>Public
+</TD><TD>&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Class_Initialize
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+<TR><TD>
+Class_Terminate
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="propriete">Propri&eacute;t&eacute;s</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type</TH></TR>
+<TR><TD>
+Cylinders
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+MediaType
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TracksPerCylinder
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SectorsPerTrack
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TotalSpace
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+BytesPerSector
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TotalPhysicalSectors
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+strMediaType
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+DiskNumber
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DiskName
+</TD><TD>Public
+</TD><TD>) As String: DiskName = Trim$(MyDisk.DiskName&nbsp;</TD><TD>
+Get
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

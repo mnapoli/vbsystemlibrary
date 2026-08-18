@@ -1,0 +1,15 @@
+# Fins de ligne : normalisation en LF pour tout le texte.
+# Le code d'origine (2007) était en CRLF ; LF fonctionne à l'identique pour
+# PHP/CSS/JS/HTML et évite les avertissements et diffs de fins de ligne.
+* text=auto eol=lf
+
+# Fichiers binaires : AUCUNE conversion de fins de ligne (sinon corruption).
+*.sqlite binary
+*.zip    binary
+*.gz     binary
+*.gif    binary
+*.jpg    binary
+*.jpeg   binary
+*.png    binary
+*.ico    binary
+*.exe    binary

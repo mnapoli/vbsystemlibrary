@@ -1,0 +1,826 @@
+<HTML><HEADER><TITLE>CLASSE : clsFileSystem</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : clsFileSystem</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+CopyFile
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Destination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CopyFolder
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Destination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+CreateFolder
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShellOpenFile
+</TD><TD>Public
+</TD><TD>ByVal File As String,<BR>ByVal hWnd As Long,<BR>Optional Parameters As String = vbNullString,<BR>Optional ByVal Directory As String = vbNullString&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+CreateEmptyFile
+</TD><TD>Public
+</TD><TD>ByVal Path As String,<BR>Optional ByVal OverWrite As Boolean = False&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DeleteFile
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+DeleteEmptyFolder
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FileExists
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+FolderExists
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DriveExists
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+GetFile
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+File
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDrive
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+Drive
+</TD></TR>
+<TR><TD>
+GetDriveName
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFolderName
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetFileName
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileExtension
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetFolder
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+Folder
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetParentFolderName
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetSpecialFolder
+</TD><TD>Public
+</TD><TD>ByVal SpecialFolder As SpecialFolderConst&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+MoveFile
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Destination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+MoveFolder
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Destination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetPhysicalDisk
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Byte&nbsp;</TD><TD>
+PhysicalDisk
+</TD></TR>
+<TR><TD>
+BrowseForFolder
+</TD><TD>Public
+</TD><TD>ByVal Title As String,<BR>hWnd As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsDriveAvailable
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+IsPhysicalDiskAvailable
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Byte&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ChangeFileAttributes
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal NewAttributes As FileAttributes&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+IsFileAvailable
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsFolderAvailable
+</TD><TD>Public
+</TD><TD>ByVal Folder As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+GetPhysicalDiskGeometry
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Byte&nbsp;</TD><TD>
+DiskGeometry
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDriveGeometry
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+DiskGeometry
+</TD></TR>
+<TR><TD>
+GetDriveSizes
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+DriveSizes
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDriveType
+</TD><TD>Public
+</TD><TD>ByVal DiskLetter As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+GetDrivePartitionInfo
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+PartitionInfo
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDriveVolumeInfo
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String&nbsp;</TD><TD>
+VolumeInfo
+</TD></TR>
+<TR><TD>
+IsRoot
+</TD><TD>Public
+</TD><TD>ByVal Path As String&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Rename
+</TD><TD>Public
+</TD><TD>ByVal Path As String,<BR>ByVal NewName As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SaveDataInFile
+</TD><TD>Public
+</TD><TD>ByVal Path As String,<BR>ByVal strStringToWrite As String,<BR>Optional ByVal DeleteActualFile As Boolean = False&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShowFileProperty
+</TD><TD>Public
+</TD><TD>ByVal Path As String,<BR>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+ShowFolderProperty
+</TD><TD>Public
+</TD><TD>ByVal Path As String,<BR>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShowDriveProperty
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String,<BR>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+ShowOpen
+</TD><TD>Public
+</TD><TD>ByVal Title As String,<BR>ByVal hWnd As Long,<BR>Optional ByVal Filter As String,<BR>Optional ByVal InitDir As String,<BR>Optional ByVal InitFile As String,<BR>Optional ByRef HasPushedCancel As Boolean,<BR>Optional ByVal DefIndex As Long,<BR>Optional ByVal Flags As OPENFILENAME_FLAGS,<BR>Optional ByRef Files As Variant&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShowSave
+</TD><TD>Public
+</TD><TD>ByVal Title As String,<BR>ByVal hWnd As Long,<BR>Optional ByVal Filter As String,<BR>Optional ByVal InitDir As String,<BR>Optional ByRef HasPushedCancel As Boolean&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+ShowRunBox
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long,<BR>ByVal Title As String,<BR>ByVal Message As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetTempName
+</TD><TD>Public
+</TD><TD>ByVal FileName As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+MoveToTrash
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+WriteFileString
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal strString As String,<BR>Optional ByVal StartingOffset As Currency = 0,<BR>Optional ByVal WriteToEnd As Boolean = False&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+WritePhysicalDiskString
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Byte,<BR>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal BytesPerSector As Long,<BR>ByVal strStringToWrite As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+WriteDriveString
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String,<BR>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal BytesPerSector As Long,<BR>ByVal strStringToWrite As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+ReadFileString
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Size As Currency,<BR>ByVal StartingOffset As Currency&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ReadDriveString
+</TD><TD>Public
+</TD><TD>ByVal DriveLetter As String,<BR>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal BytesPerSector As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+ReadPhysicalDiskString
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Byte,<BR>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal BytesPerSector As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileVersionInfos
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+FileVersionInfos
+</TD></TR>
+<TR><TD>
+GetFileDates
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+FileDates
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileDateAsCurrency
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>TypeOfDate As FileDatesEnum&nbsp;</TD><TD>
+Currency
+</TD></TR>
+<TR><TD>
+GetFolderDateAsCurrency
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>TypeOfDate As FileDatesEnum&nbsp;</TD><TD>
+Currency
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFolderDates
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+FileDates
+</TD></TR>
+<TR><TD>
+GetFileSize
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Currency
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetCompressedFileSize
+</TD><TD>Public
+</TD><TD>Source As String&nbsp;</TD><TD>
+Currency
+</TD></TR>
+<TR><TD>
+GetFileAttributes
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+FileAttributes
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFolderAttributes
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+FileAttributes
+</TD></TR>
+<TR><TD>
+GetShortName
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>Optional ByVal Size As Long = 164&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetShortPath
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>Optional ByVal Size As Long = 164&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetAssociatedProgram
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileType
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetIcon
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>ByVal Size As IconSize&nbsp;</TD><TD>
+IPictureDisp
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumFiles
+</TD><TD>Public
+</TD><TD>ByVal Folder As String,<BR>Optional ByVal SubFolder As Boolean = False,<BR>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+Files
+</TD></TR>
+<TR><TD>
+EnumDrives
+</TD><TD>Public
+</TD><TD>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+Drives
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumPhysicalDisks
+</TD><TD>Public
+</TD><TD>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+PhysicalDisks
+</TD></TR>
+<TR><TD>
+EnumDrivesStr
+</TD><TD>Public
+</TD><TD>) As String(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumPhysicalDisksStr
+</TD><TD>Public
+</TD><TD>) As Byte(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+EnumFolders
+</TD><TD>Public
+</TD><TD>ByVal Folder As String,<BR>Optional ByVal SubFolder As Boolean = False,<BR>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+Folders
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumFilesStr
+</TD><TD>Public
+</TD><TD>ByVal Folder As String,<BR>Optional ByVal SubFolder As Boolean = False) As String(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+GetPhysicalDiskName
+</TD><TD>Public
+</TD><TD>ByVal DiskNumber As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumFoldersStr
+</TD><TD>Public
+</TD><TD>ByVal Folder As String,<BR>Optional ByVal SubFolder As Boolean = False) As String(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+StringWithoutNullChar
+</TD><TD>Private
+</TD><TD>ByVal strString As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FileTimeToString
+</TD><TD>Private
+</TD><TD>fDate As FILETIME&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetIconFromHandle
+</TD><TD>Private
+</TD><TD>hIcon As Long&nbsp;</TD><TD>
+IPictureDisp
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FixedHex
+</TD><TD>Private
+</TD><TD>ByVal hexval As Long,<BR>ByVal nDigits As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+HIWORD
+</TD><TD>Private
+</TD><TD>ByVal dwValue As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+LOWORD
+</TD><TD>Private
+</TD><TD>ByVal dwValue As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+PermuteString
+</TD><TD>Private
+</TD><TD>ByRef s As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetMediaType
+</TD><TD>Private
+</TD><TD>ByVal bytType As Byte&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetStringDriveType
+</TD><TD>Public
+</TD><TD>ByVal bytType As Byte&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DownloadFile
+</TD><TD>Public
+</TD><TD>ByVal URL As String,<BR>ByVal FileToSave As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+EncryptFile
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EncryptFolder
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+DecryptFile
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DecryptFolder
+</TD><TD>Public
+</TD><TD>ByVal Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+LoadFileInString
+</TD><TD>Public
+</TD><TD>ByVal Source As String,<BR>Optional ByRef IsOk As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SanitizeFile
+</TD><TD>Public
+</TD><TD>Source As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SanitizeDrive
+</TD><TD>Public
+</TD><TD>DriveLetter As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SanitizePhysicalDisk
+</TD><TD>Public
+</TD><TD>DiskNumber As Byte&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SearchForFiles
+</TD><TD>Public
+</TD><TD>Search As SearchDefinition,<BR>Optional RefreshInfos As Boolean = False,<BR>Optional FormEvent As Object&nbsp;</TD><TD>
+Files
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SearchForFolders
+</TD><TD>Public
+</TD><TD>Search As SearchDefinition,<BR>Optional RefreshInfos As Boolean = False,<BR>Optional FormEvent As Object&nbsp;</TD><TD>
+Folders
+</TD></TR>
+<TR><TD>
+SearchForFilesStr
+</TD><TD>Public
+</TD><TD>Search As SearchDefinition,<BR>Optional FormEvent As Object) As String(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SearchForFoldersStr
+</TD><TD>Public
+</TD><TD>Search As SearchDefinition,<BR>Optional FormEvent As Object) As String(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR><TD>
+SetVolumeLabel
+</TD><TD>Public
+</TD><TD>DiskLetter As String,<BR>NewLabel As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetFileDates
+</TD><TD>Public
+</TD><TD>Source As String,<BR>Optional ByVal DateCreated As String = vbNullString,<BR>Optional ByVal DateLastAccess As String = vbNullString,<BR>Optional ByVal DateLastModification As String = vbNullString&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SetFolderDates
+</TD><TD>Public
+</TD><TD>Source As String,<BR>Optional ByVal DateCreated As String = vbNullString,<BR>Optional ByVal DateLastAccess As String = vbNullString,<BR>Optional ByVal DateLastModification As String = vbNullString&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CompareFiles
+</TD><TD>Public
+</TD><TD>File1 As String,<BR>File2 As String&nbsp;</TD><TD>
+FileComparisonResult
+</TD></TR>
+<TR><TD>
+CutFile
+</TD><TD>Public
+</TD><TD>Source As String,<BR>DestinationFolder As String,<BR>Method As CutMethod&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FusionFiles
+</TD><TD>Public
+</TD><TD>GrupFile As String,<BR>FolderDestination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+CreateIsoFromDrive
+</TD><TD>Public
+</TD><TD>DriveLetter As String,<BR>IsoDestination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDriveGeometry_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hDrive As Long&nbsp;</TD><TD>
+DiskGeometry
+</TD></TR>
+<TR><TD>
+GetDriveSizes_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hDrive As String,<BR>sDiskLetter As String&nbsp;</TD><TD>
+DriveSizes
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDrivePartitionInfo_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hDrive As String&nbsp;</TD><TD>
+PartitionInfo
+</TD></TR>
+<TR><TD>
+GetPhysicalDiskGeometry_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hDrive As Long&nbsp;</TD><TD>
+DiskGeometry
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetPhysicalDiskName_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hDrive As Long,<BR>ByVal DiskNumber As Byte&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetFileDates_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hFile As Long&nbsp;</TD><TD>
+FileDates
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFolderDates_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hFolder As Long&nbsp;</TD><TD>
+FileDates
+</TD></TR>
+<TR><TD>
+GetFileSizes_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hFile As Long,<BR>ByVal Source As String&nbsp;</TD><TD>
+FileSizes
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileAttributes_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hFile As Long&nbsp;</TD><TD>
+FileAttributes
+</TD></TR>
+<TR><TD>
+GetFolderAttributes_HANDLE
+</TD><TD>Friend
+</TD><TD>ByVal hFolder As Long&nbsp;</TD><TD>
+FileAttributes
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetBytesFromFileHandle
+</TD><TD>Friend
+</TD><TD>ByVal hFile As Long,<BR>ByVal curSize As Currency,<BR>ByVal curOffset As Currency&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+DirectReadSHandle
+</TD><TD>Friend
+</TD><TD>ByVal hDevice As Long,<BR>ByVal iStartSec As Currency,<BR>ByVal nBytes As Long,<BR>ByVal lBytesPerSector As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+WriteBytesToFileEndHandle
+</TD><TD>Friend
+</TD><TD>ByVal lngFile As Long,<BR>ByVal sString As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+CutFileFriend
+</TD><TD>Friend
+</TD><TD>ByVal sFile As String,<BR>ByVal sFolderOut As String,<BR>tMethode As CutMethod&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PasteFile
+</TD><TD>Friend
+</TD><TD>ByVal sFileGroup As String,<BR>ByVal sFolderOut As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+Mod2
+</TD><TD>Friend
+</TD><TD>ByVal cur As Currency,<BR>lng As Long&nbsp;</TD><TD>
+Currency
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetBytesFromFile
+</TD><TD>Friend
+</TD><TD>ByVal sFile As String,<BR>ByVal curSize As Currency,<BR>ByVal curOffset As Currency&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+WriteBytesToFile
+</TD><TD>Friend
+</TD><TD>ByVal sFile As String,<BR>ByVal sString As String,<BR>ByVal curOffset As Currency&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+WriteBytesToFileEnd
+</TD><TD>Friend
+</TD><TD>ByVal sFile As String,<BR>ByVal sString As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+IsFileOk
+</TD><TD>Private
+</TD><TD>sFile As String,<BR>tS As SearchDefinition&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsFolderOk
+</TD><TD>Private
+</TD><TD>sFolder As String,<BR>tS As SearchDefinition&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+DateString2Currency
+</TD><TD>Private
+</TD><TD>ByVal sDate As String&nbsp;</TD><TD>
+Currency
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+GetLargeInteger
+</TD><TD>Private
+</TD><TD>ByVal curVar As Currency,<BR>ByRef lngLowPart As Long,<BR>ByRef lngHighPart As Long&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnumFilesFromFolder
+</TD><TD>Private
+</TD><TD>ByVal Directory As String,<BR>Files() As String,<BR>Optional Begin As Boolean = False,<BR>Optional SubFolder As Boolean = True&nbsp;
+</TD></TR>
+<TR><TD>
+EnumFoldersPrivate
+</TD><TD>Private
+</TD><TD>ByVal Directory As String,<BR>s() As String,<BR>Optional Begin As Boolean = False,<BR>Optional SubFolder As Boolean = True&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+WriteBytesToFileHandle
+</TD><TD>Friend
+</TD><TD>ByVal hFile As Long,<BR>ByVal pt As Long,<BR>ByVal curOffset As Currency,<BR>ByVal lLen As Long&nbsp;
+</TD></TR>
+<TR><TD>
+DirectWritePtHandle
+</TD><TD>Friend
+</TD><TD>ByVal hDevice As Long,<BR>ByVal iStartSec As Currency,<BR>ByVal nBytes As Long,<BR>ByVal lBytesPerSector As Long,<BR>ByRef pt As Long&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="propriete">Propri&eacute;t&eacute;s</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type</TH></TR>
+<TR><TD>
+Drives
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PhysicalDisks
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+NumberOfPhysicalDrives
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

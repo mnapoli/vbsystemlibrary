@@ -1,0 +1,234 @@
+<HTML><HEADER><TITLE>CLASSE : clsProcesses</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : clsProcesses</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+CreateProcessesBuffer
+</TD><TD>Private
+</TD><TD>ByRef Buffer() As Byte&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessByID
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long,<BR>Optional ByVal RefreshInfos As Boolean = False&nbsp;</TD><TD>
+Process
+</TD></TR>
+<TR><TD>
+GetProcessList
+</TD><TD>Public
+</TD><TD>ByRef ProcessLst() As ProcessInfo&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessIDList
+</TD><TD>Public
+</TD><TD>ByRef listProcessID() As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+GetProcessBasicInfos
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+ProcessBasicInformations
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessInfos
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+ProcessInfo
+</TD></TR>
+<TR><TD>
+GetProcessThreads
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long) As ThreadInfo(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsProcessRunning
+</TD><TD>Public
+</TD><TD>ByVal PID As Long&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+KillProcess
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CloseProcess
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long,<BR>Optional Delai As Long = 2000,<BR>Optional Force As Boolean = False&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SuspendProcess
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ResumeProcess
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+GetProcessFileName
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessPriority
+</TD><TD>Public
+</TD><TD>ProcessID As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SetProcessPriority
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long,<BR>ByVal Level As Long&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetPriorityName
+</TD><TD>Public
+</TD><TD>ByVal Priority As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetPriorityValue
+</TD><TD>Public
+</TD><TD>ByVal Priority As ProcessPriority&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessMemoryInfos
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long&nbsp;</TD><TD>
+PROCESS_MEMORY_COUNTERS
+</TD></TR>
+<TR><TD>
+GetProcessUserName
+</TD><TD>Public
+</TD><TD>ByVal PID As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetParentProcessID
+</TD><TD>Public
+</TD><TD>ByVal PID As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+SetPrivilege
+</TD><TD>Public
+</TD><TD>ByVal ProcessID As Long,<BR>ByVal seName As String,<BR>ByVal Status As Boolean&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFullPrivilegeName
+</TD><TD>Public
+</TD><TD>ByVal sName As String&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+GetStatusLong
+</TD><TD>Private
+</TD><TD>ByVal Status As Boolean&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetCoreListFromMask
+</TD><TD>Public
+</TD><TD>Mask As Long,<BR>CoreList() As Byte&nbsp;</TD><TD>
+Integer
+</TD></TR>
+<TR><TD>
+GetMaskFromCoreList
+</TD><TD>Public
+</TD><TD>CoreList() As Byte&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CoreListToString
+</TD><TD>Public
+</TD><TD>CoreList() As Byte&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+CoreListToByteArray
+</TD><TD>Public
+</TD><TD>CoreList As String) As Byte(&nbsp;</TD><TD>
+Variant
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+FillProcArray
+</TD><TD>Private
+</TD><TD>ByRef pArray As SafeArray1d,<BR>ByVal Address As Long,<BR>ByRef Process() As SYSTEM_PROCESSES&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FillThreadArray
+</TD><TD>Private
+</TD><TD>ByRef tArray As SafeArray1d,<BR>ByVal Address As Long,<BR>ByRef Proc() As SYSTEM_PROCESSES&nbsp;
+</TD></TR>
+<TR><TD>
+GetProcessorTimes
+</TD><TD>Public
+</TD><TD>ByVal lPid As Long,<BR>ByRef KernelTime As Double,<BR>ByRef UserTime As Double,<BR>ByRef ProcessorTime As Double&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+RetrieveProcessMemoryRegions
+</TD><TD>Public
+</TD><TD>ByVal lPid As Long,<BR>ByRef lBaseAdress() As Long,<BR>ByRef lRegionSize() As Long&nbsp;
+</TD></TR>
+<TR><TD>
+FormatPath
+</TD><TD>Private
+</TD><TD>ByRef Path As String&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+EnableDebugPrivileges
+</TD><TD>Public
+</TD><TD>&nbsp;
+</TD></TR>
+<TR><TD>
+GetProcessFullInformation
+</TD><TD>Private
+</TD><TD>ByRef Proc As SYSTEM_PROCESSES,<BR>ByRef ProcInfo As ProcessInfo,<BR>ByRef ThreadInfos() As ThreadInfo&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessBasicInformation
+</TD><TD>Private
+</TD><TD>ByRef Proc As SYSTEM_PROCESSES,<BR>ByRef ProcInfo As ProcessBasicInformations&nbsp;
+</TD></TR>
+<TR><TD>
+GetThreadFullInformation
+</TD><TD>Private
+</TD><TD>ByRef Proc As SYSTEM_PROCESSES,<BR>ByRef ThreadInfos() As ThreadInfo&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

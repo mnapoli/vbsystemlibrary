@@ -1,0 +1,134 @@
+
+                             Script crée par Christophe Mosbeux, 
+                     Webmaster du site http://www.multimania.com/webmasterfacile
+
+        ################################################################################
+        #                                                                              #
+        #                                                                              #
+        #                     Le Compteur de clic simple ( Version 1 )                 #
+        #                     ----------------------------------------                 #
+        #                                                                              #
+        #                                                                              #
+        #                    Suivez les étapes ci-desssous dans l'ordre et             #
+        #                    il n'y aura pas de probléme.                              #
+        #                                                                              #
+        #                                                                              #
+        #                                                                              #
+        ################################################################################
+
+
+        Les Fichiers du script
+        ----------------------
+
+        * Lisez_Moi.txt : Ce fichier
+        * Table.txt : La table du script
+        * Clic.php3 : Le fichier qui permet d'incrémenter lors de chaque clic
+        * Formulaire.php3 : Le formulaire qui permet d'ajouter des adresses de sites dans 
+                            la table
+
+        * Add.php3 : Fichier de confirmation d'ajout de l'url dans la table lorsque le 
+                     formulaire est remplis correctement, si le formulaire n'est pas remplis 
+                     correctement c'est cette page qui vous invite a retourner au formulaire
+                     pour le remplir correctement. Ce fichier vérifie aussi si l'url entré 
+                     est déja présent dans la table. si oui on vous en informe. Il n'est 
+                     donc pas nécessaire d'ajouter cet url.
+
+        * Config.php3 : Le fichier qui contient les variables pour se connecter à la table.
+        * identification.php3 : Ce fichier permet de vous identifier pour que vous soyez la seul
+                                personne a gerer le script. 
+
+
+
+        Installation du script
+        ----------------------
+
+        Suivez les étapes ci-dessous dans l'ordre.
+
+        1- Ouvrez le fichier Config.php3 remplissez les 4 variables qui permettent 
+           la connection à la base. 
+           Choissisez un mot de passe
+
+        2- Ajoutez dans votre base le table "compteurdeclicsimple" à l'aide du fichier Table.txt
+
+        3- Transférez tous les fichiers dans un même dossier sur votre site 
+           (http://www.vous.com/nom_du_dossier_du_script)
+
+
+
+        Utilisation du script
+        ----------------------
+
+
+        Pour utiliser correctement le script suivez les étapes ci-dessous dans l'ordre.
+
+
+        1- Ajout d'une url dans la table "compteurdeclicsimple" :
+
+           * Rendez vous à la page identification pour vous identifier
+             http://www.vous.com/nom_du_dossier_du_script/identification.php3
+           * Si le mot de passe est correcte, un formulaire apparaît.
+           * Dans ce formulaire ajoutez l'url dans le champ et appuyez sur envoyer, Si on vous 
+             confirme que l'url a été ajouté dans la base c'est bon. Sinon recommencer 
+             l'opération.
+            
+
+
+        2- Compter les clic sur les liens :
+
+           * Aprés avoir ajouté les url voulues dans la table recherchez dans celle ci l'ID 
+             du site il s'agit d'un chiffre. (Le premier site ajouté a l'aide du formulaire
+             à comme ID 1, puis ainsi de suite). Je vous conseille de vérifier a chaque 
+             fois que vous ajouté dans la table une url quel ID correspond a cet l'url ajouté.
+             
+
+
+             Exemple : http://www.yahoo.fr ---->  Id = 1
+                       http://www.altavista.fr ---->  Id = 2
+
+
+           * Pour compter le nombre de clic et afficher le résultat a coté du lien il vous suffit 
+             d'ajouter ce code. Remplassez dans le code ID_DU_SITE par l'id de du site.
+
+
+             <a href="clic.php3?id=ID_DU_SITE">NOM_DU_SITE</a><? show_nb_clics(ID_DU_SITE); ?>
+             
+
+            * Voici le code pour les 2 exemples ci dessous (Yahoo et Altavista)
+
+
+            <a href="clic.php3?id=1">Yahoo</a><? show_nb_clics(1); ?>  
+            <a href="clic.php3?id=2">Altavista</a><? show_nb_clics(2); ?>
+        
+            Ce qui donne : Yahoo (X clics)
+            Ce qui donne : Altavista (X clics)
+
+            * Ajoutez dans chaque page dans laquelles vous avez placé un compteur de clic ce 
+              code : <? include(clic.php3); ?>
+
+            * Enregistrez la page avec l'extension .php ou .php3
+
+
+        Important
+        ---------
+
+        Si vous voulez compter le nombre de clic des liens de fichiers qui se situent dans 
+        des dossiers différent du dossier de ce script il suffit d'ajouter dans ces différent 
+        dossier le fichier "clic.php3" et le fichier "config.php3"
+
+        
+        A Lire
+        ------
+
+
+        Voila le script marche maintenant, si vous rencontres des problémes connectez vous 
+        sur mon site http://www.multimania.com/webmasterfacile et posez vos question dans 
+        le forum ou contactez moi sur mon mail "webmasfacile@mail.be
+
+
+        N'hésitez pas a me faire des suggestions pour améliorer ce script
+
+        Visitez de temps en temps cette page :
+        http://www.multimania.com/webmasterfacile/Webmasters/Php/Scripts/compteurdeclicsimple.php3
+        Elle vous tiendra au courant des évolutions et des projets pour améliorer le script.
+        
+        A Bientôt :-)

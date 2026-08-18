@@ -1,0 +1,33 @@
+# Contexte de build de l'image container = artefact de déploiement réel.
+# C'est ICI que se joue l'exclusion (et non dans serverless package.patterns,
+# inopérant pour une fonction `image:`).
+
+# VCS / éditeurs / artefacts
+.git
+.gitignore
+.dockerignore
+.idea
+.vscode
+**/.DS_Store
+*.log
+
+# Données brutes contenant des informations personnelles (servent uniquement
+# à construire la base SQLite purgée, hors runtime)
+Sauvegardes BDD/
+
+# Scripts de build de la base (non nécessaires à l'exécution)
+build/
+
+# Dépendances : réinstallées proprement dans l'étape "vendor" de l'image
+vendor/
+node_modules/
+
+# Méta de déploiement / doc / dev (inutiles dans l'image)
+.serverless/
+README.md
+Dockerfile
+docker-compose*.yml
+serverless.yml
+
+# Échantillon VB hors site web
+tests/

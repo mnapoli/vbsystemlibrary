@@ -1,0 +1,77 @@
+<HTML><HEADER><TITLE>CLASSE : Folders</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : Folders</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+NewEnum
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+IEnumVARIANT
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ForEach
+</TD><TD>Public
+</TD><TD>ByVal iCurrent As Long,<BR>var As Variant&nbsp;</TD><TD>
+Long
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+Class_Initialize
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Class_Terminate
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+<TR><TD>
+AddItem
+</TD><TD>Public
+</TD><TD>Path As String,<BR>Optional ByVal RefreshInfos As Boolean = True&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+RemoveItem
+</TD><TD>Public
+</TD><TD>Index As Long&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="propriete">Propri&eacute;t&eacute;s</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type</TH></TR>
+<TR><TD>
+Count
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Item
+</TD><TD>Public
+</TD><TD>Index As Long) As Folder: Set Item = colFiles(Index&nbsp;</TD><TD>
+Get / Set
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

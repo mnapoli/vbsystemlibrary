@@ -1,0 +1,41 @@
+service: vbsyslib
+
+bref:
+    team: bref
+
+provider:
+    name: aws
+    region: eu-west-3
+    ecr:
+        images:
+            vbsyslib:
+                path: .
+
+functions:
+    web:
+        image:
+            name: vbsyslib
+        memorySize: 512
+        timeout: 5
+        events:
+            -   httpApi: '*'
+
+package:
+    # NB : ce projet se déploie en IMAGE container (fonction `image:`).
+    # Les exclusions EFFECTIVES sont dans .dockerignore ; ce bloc n'agit
+    # qu'en packaging ZIP (conservé au cas où l'on repasse en zip/layer).
+    patterns:
+        - '!Sauvegardes BDD/**'
+        - '!build/**'
+        - '!tests/**'
+        - '!node_modules/**'
+        - '!.git/**'
+        - '!.idea/**'
+        - '!.vscode/**'
+        - '!README.md'
+        - '!Dockerfile'
+        - '!.dockerignore'
+        - '!docker-compose*.yml'
+
+plugins:
+    - ./vendor/bref/bref

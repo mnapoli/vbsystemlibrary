@@ -1,0 +1,25 @@
+# Données brutes contenant des informations personnelles (emails, hash MD5, IP)
+# — sert uniquement à construire le SQLite purgé, ne doit pas être publié.
+Sauvegardes BDD/
+
+# Secrets historiques
+passwords/.htpasswd
+
+# Artefacts macOS / éditeurs
+.DS_Store
+*.swp
+
+# Dépendances / build serverless
+/vendor/
+/.serverless/
+/node_modules/
+
+# Avatars uploadés à l'exécution (spam) — non versionnés
+users/tmp/
+
+# Projet PhpStorm
+.idea/
+.vscode/
+
+# Log généré à l'exécution
+log/errors.log

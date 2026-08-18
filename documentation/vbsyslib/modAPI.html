@@ -1,0 +1,617 @@
+<HTML><HEADER><TITLE>MODULE : modAPI</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>MODULE : modAPI</H1>
+<H2><A NAME="apis">APIs</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Librairie</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH><TH>Port&eacute;e</TH></TR>
+<TR><TD>
+GetProcessMemoryInfo
+</TD><TD>PSAPI.DLL</TD><TD>ByVal hProcess As Long,<BR>ppsmemCounters As PROCESS_MEMORY_COUNTERS,<BR>ByVal cb As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CopyMemory
+<BR><I>As&nbsp;RtlMoveMemory</I>
+</TD><TD>kernel32.dll</TD><TD>Destination As Any,<BR>Source As Any,<BR>ByVal Length As Long&nbsp;</TD><TD>
+N/A
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+MoveMemory
+<BR><I>As&nbsp;RtlMoveMemory</I>
+</TD><TD>kernel32.dll</TD><TD>Destination As Any,<BR>Source As Any,<BR>ByVal Length As Long&nbsp;</TD><TD>
+N/A
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+lstrcpy
+<BR><I>As&nbsp;lstrcpyA</I>
+</TD><TD>kernel32.dll</TD><TD>ByVal lpString1 As String,<BR>ByVal lpString2 As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+VarPtrArray
+<BR><I>As&nbsp;VarPtr</I>
+</TD><TD>msvbvm60.dll</TD><TD>Arr() As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+VirtualQueryEx
+</TD><TD>kernel32</TD><TD>ByVal hProcess As Long,<BR>lpAddress As Any,<BR>lpBuffer As MEMORY_BASIC_INFORMATION,<BR>ByVal dwLength As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetSystemMetrics
+</TD><TD>user32</TD><TD>ByVal nIndex As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetProcessTimes
+</TD><TD>kernel32</TD><TD>ByVal hProcess As Long,<BR>lpCreationTime As FILETIME,<BR>lpExitTime As FILETIME,<BR>lpKernelTime As FILETIME,<BR>lpUserTime As FILETIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+WriteProcessMemory
+</TD><TD>kernel32</TD><TD>ByVal hProcess As Long,<BR>lpBaseAddress As Any,<BR>lpBuffer As Any,<BR>ByVal nSize As Long,<BR>lpNumberOfBytesWritten As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetWindowAPI
+<BR><I>As&nbsp;GetWindow</I>
+</TD><TD>user32</TD><TD>ByVal hWnd As Long,<BR>ByVal wCmd As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetWindowPlacement
+</TD><TD>user32</TD><TD>ByVal hWnd As Long,<BR>lpWndPl As WINDOWPLACEMENT&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetWindowPlacement
+</TD><TD>user32</TD><TD>ByVal hWnd As Long,<BR>lpWndPl As WINDOWPLACEMENT&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+SendMessage
+<BR><I>As&nbsp;SendMessageA</I>
+</TD><TD>user32</TD><TD>ByVal hWnd As Long,<BR>ByVal wMsg As Long,<BR>ByVal wParam As Long,<BR>lParam As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetModuleInformation
+</TD><TD>PSAPI.DLL</TD><TD>ByVal hProcess As Long,<BR>ByVal hModule As Long,<BR>lpmodinfo As MODULEINFO,<BR>ByVal cb As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+Thread32First
+</TD><TD>kernel32.dll</TD><TD>ByVal hSnapshot As Long,<BR>ByRef lpte As THREADENTRY32&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Thread32Next
+</TD><TD>kernel32.dll</TD><TD>ByVal hSnapshot As Long,<BR>ByRef lpte As THREADENTRY32&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+CreateRemoteThread
+</TD><TD>kernel32</TD><TD>ByVal hProcess As Long,<BR>lpThreadAttributes As Any,<BR>ByVal dwStackSize As Long,<BR>lpStartAddress As Long,<BR>lpParameter As Any,<BR>ByVal dwCreationFlags As Long,<BR>lpThreadId As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileVersionInfo
+<BR><I>As&nbsp;GetFileVersionInfoA</I>
+</TD><TD>Version.dll</TD><TD>ByVal lptstrFilename As String,<BR>ByVal dwHandle As Long,<BR>ByVal dwLen As Long,<BR>lpData As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetFileVersionInfoSize
+<BR><I>As&nbsp;GetFileVersionInfoSizeA</I>
+</TD><TD>Version.dll</TD><TD>ByVal lptstrFilename As String,<BR>lpdwHandle As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+VerQueryValue
+<BR><I>As&nbsp;VerQueryValueA</I>
+</TD><TD>Version.dll</TD><TD>pBlock As Any,<BR>ByVal lpSubBlock As String,<BR>lplpBuffer As Any,<BR>puLen As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+SHGetSpecialFolderLocation
+</TD><TD>Shell32.dll</TD><TD>ByVal hwndOwner As Long,<BR>ByVal nFolder As Long,<BR>pidl As ITEMIDLIST&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CreateFile
+<BR><I>As&nbsp;CreateFileA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpFileName As String,<BR>ByVal dwDesiredAccess As Long,<BR>ByVal dwShareMode As Long,<BR>ByVal lpSecurityAttributes As Any,<BR>ByVal dwCreationDisposition As Long,<BR>ByVal dwFlagsAndAttributes As Long,<BR>ByVal hTemplateFile As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+OleCreatePictureIndirect
+</TD><TD>oleaut32.dll</TD><TD>ByRef lpPictDesc As PICTDESC,<BR>ByRef riid As GUID,<BR>ByVal fOwn As Long,<BR>ByRef lplpvObj As IPictureDisp&nbsp;</TD><TD>
+N/A
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+AdjustTokenPrivileges
+</TD><TD>advapi32.dll</TD><TD>ByVal TokenHandle As Long,<BR>ByVal DisableAllPrivileges As Long,<BR>NewState As TOKEN_PRIVILEGES,<BR>ByVal BufferLength As Long,<BR>PreviousState As TOKEN_PRIVILEGES,<BR>ReturnLength As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+LookupPrivilegeValue
+<BR><I>As&nbsp;LookupPrivilegeValueA</I>
+</TD><TD>advapi32.dll</TD><TD>ByVal lpSystemName As String,<BR>ByVal lpName As String,<BR>lpLuid As LUID&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetTokenInformation
+</TD><TD>advapi32.dll</TD><TD>ByVal TokenHandle As Long,<BR>ByVal TokenInformationClass As Long,<BR>TokenInformation As Any,<BR>ByVal TokenInformationLength As Long,<BR>ReturnLength As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+EnumDisplayMonitors
+</TD><TD>user32</TD><TD>ByVal hDC As Long,<BR>lprcClip As Any,<BR>ByVal lpfnEnum As Long,<BR>ByVal dwData As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetMonitorInfoW
+</TD><TD>user32</TD><TD>ByVal hMonitor As Long,<BR>lpmi As MONITORINFOEXW&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+CompareFileTime
+</TD><TD>kernel32</TD><TD>lpFileTime1 As Currency,<BR>lpFileTime2 As Currency&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SystemTimeToFileTime
+</TD><TD>kernel32</TD><TD>lpSystemTime As SYSTEMTIME,<BR>lpFileTime As FILETIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+LocalFileTimeToFileTime
+</TD><TD>kernel32</TD><TD>lpLocalFileTime As FILETIME,<BR>lpFileTime As FILETIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetVolumeLabelAPI
+<BR><I>As&nbsp;SetVolumeLabelA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpRootPathName As String,<BR>ByVal lpVolumeName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+EncryptFileAPI
+<BR><I>As&nbsp;EncryptFileA</I>
+</TD><TD>ADVAPI32</TD><TD>ByVal lpFileName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DecryptFileAPI
+<BR><I>As&nbsp;DecryptFileA</I>
+</TD><TD>ADVAPI32</TD><TD>ByVal lpFileName As String,<BR>ByVal dwReserved As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+URLDownloadToFile
+<BR><I>As&nbsp;URLDownloadToFileA</I>
+</TD><TD>urlmon</TD><TD>ByVal pCaller As Long,<BR>ByVal szURL As String,<BR>ByVal szFileName As String,<BR>ByVal dwReserved As Long,<BR>ByVal lpfnCB As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileTypeAPI
+<BR><I>As&nbsp;GetFileType</I>
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetLogicalDriveStrings
+<BR><I>As&nbsp;GetLogicalDriveStringsA</I>
+</TD><TD>kernel32.dll</TD><TD>ByVal nBufferLength As Long,<BR>ByVal lpBuffer As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DeviceIoControl
+</TD><TD>kernel32.dll</TD><TD>ByVal hDevice As Long,<BR>ByVal dwIoControlCode As Long,<BR>lpInBuffer As Any,<BR>ByVal nInBufferSize As Long,<BR>lpOutBuffer As Any,<BR>ByVal nOutBufferSize As Long,<BR>lpBytesReturned As Long,<BR>lpOverlapped As OVERLAPPED&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetVolumeInformation
+<BR><I>As&nbsp;GetVolumeInformationA</I>
+</TD><TD>kernel32.dll</TD><TD>ByVal lpRootPathName As String,<BR>ByVal lpVolumeNameBuffer As String,<BR>ByVal nVolumeNameSize As Long,<BR>lpVolumeSerialNumber As Long,<BR>lpMaximumComponentLength As Long,<BR>lpFileSystemFlags As Long,<BR>ByVal lpFileSystemNameBuffer As String,<BR>ByVal nFileSystemNameSize As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetDiskFreeSpace
+<BR><I>As&nbsp;GetDiskFreeSpaceA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpRootPathName As String,<BR>lpSectorsPerCluster As Long,<BR>lpBytesPerSector As Long,<BR>lpNumberOfFreeClusters As Long,<BR>lpTotalNumberOfClusters As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetDriveTypeAPI
+<BR><I>As&nbsp;GetDriveTypeA</I>
+</TD><TD>kernel32</TD><TD>ByVal nDrive As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DeviceIoControl2
+<BR><I>As&nbsp;DeviceIoControl</I>
+</TD><TD>kernel32</TD><TD>ByVal hDevice As Long,<BR>ByVal dwIoControlCode As Long,<BR>lpInBuffer As Any,<BR>ByVal nInBufferSize As Long,<BR>lpOutBuffer As Any,<BR>ByVal nOutBufferSize As Long,<BR>lpBytesReturned As Long,<BR>ByVal lpOverlapped As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetTempPath
+<BR><I>As&nbsp;GetTempPathA</I>
+</TD><TD>kernel32</TD><TD>ByVal nBufferLength As Long,<BR>ByVal lpBuffer As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetTempFileName
+<BR><I>As&nbsp;GetTempFileNameA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpszPath As String,<BR>ByVal lpPrefixString As String,<BR>ByVal wUnique As Long,<BR>ByVal lpTempFileName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+RemoveDirectory
+<BR><I>As&nbsp;RemoveDirectoryA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpPathName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FlushFileBuffers
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+LockFile
+</TD><TD>kernel32.dll</TD><TD>ByVal hFile As Long,<BR>ByVal dwFileOffsetLow As Long,<BR>ByVal dwFileOffsetHigh As Long,<BR>ByVal nNumberOfBytesToLockLow As Long,<BR>ByVal nNumberOfBytesToLockHigh As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+UnlockFile
+</TD><TD>kernel32.dll</TD><TD>ByVal hFile As Long,<BR>ByVal dwFileOffsetLow As Long,<BR>ByVal dwFileOffsetHigh As Long,<BR>ByVal nNumberOfBytesToUnlockLow As Long,<BR>ByVal nNumberOfBytesToUnlockHigh As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+WriteFile
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>lpBuffer As Any,<BR>ByVal nNumberOfBytesToWrite As Long,<BR>lpNumberOfBytesWritten As Long,<BR>lpOverlapped As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetFilePointerEx
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>ByVal liDistanceToMove As Currency,<BR>ByRef lpNewFilePointer As Currency,<BR>ByVal dwMoveMethod As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+ExtractAssociatedIcon
+<BR><I>As&nbsp;ExtractAssociatedIconA</I>
+</TD><TD>Shell32.dll</TD><TD>ByVal hInst As Long,<BR>ByVal lpIconPath As String,<BR>lpiIcon As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ImageList_GetIcon
+</TD><TD>comctl32.dll</TD><TD>ByVal himl&,<BR>ByVal i&,<BR>ByVal Flags&&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+DestroyIcon
+</TD><TD>user32.dll</TD><TD>ByVal hIcon As Long&nbsp;</TD><TD>
+Boolean
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SHGetFileInfo
+<BR><I>As&nbsp;SHGetFileInfoA</I>
+</TD><TD>Shell32.dll</TD><TD>ByVal pszPath As String,<BR>ByVal dwFileAttributes As Long,<BR>psfi As SHFILEINFO,<BR>ByVal cbFileInfo As Long,<BR>ByVal uFlags As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+SHFileOperation
+<BR><I>As&nbsp;SHFileOperationA</I>
+</TD><TD>Shell32.dll</TD><TD>lpFileOp As Fichier&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SHGetPathFromIDList
+<BR><I>As&nbsp;SHGetPathFromIDListA</I>
+</TD><TD>Shell32.dll</TD><TD>ByVal pidl As Long,<BR>ByVal pszPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+FindFirstFile
+<BR><I>As&nbsp;FindFirstFileA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpFileName As String,<BR>lpFindFileData As WIN32_FIND_DATA&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FindClose
+</TD><TD>kernel32</TD><TD>ByVal hFindFile As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetFileSizeEx
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>lpFileSize As Currency&nbsp;</TD><TD>
+Boolean
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CloseHandle
+</TD><TD>kernel32</TD><TD>ByVal hObject As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+DeleteFileAPI
+<BR><I>As&nbsp;DeleteFileA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpFileName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetFileAttributes
+<BR><I>As&nbsp;SetFileAttributesA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpFileSpec As String,<BR>ByVal dwFileAttributes As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+SHBrowseForFolder
+</TD><TD>shell32</TD><TD>lpbi As BrowseInfo&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+lstrcat
+<BR><I>As&nbsp;lstrcatA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpString1 As String,<BR>ByVal lpString2 As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+FileTimeToSystemTime
+</TD><TD>kernel32</TD><TD>lpFileTime As FILETIME,<BR>lpSystemTime As SYSTEMTIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetFileTime
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>lpCreationTime As FILETIME,<BR>lpLastAccessTime As FILETIME,<BR>lpLastWriteTime As FILETIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+FileTimeToLocalFileTime
+</TD><TD>kernel32</TD><TD>lpFileTime As FILETIME,<BR>lpLocalFileTime As FILETIME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+CreateDirectory
+<BR><I>As&nbsp;CreateDirectoryA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpPathName As String,<BR>lpSecurityAttributes As SECURITY_ATTRIBUTES&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+PathFileExists
+<BR><I>As&nbsp;PathFileExistsA</I>
+</TD><TD>shlwapi.dll</TD><TD>ByVal pszPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PathIsDirectory
+<BR><I>As&nbsp;PathIsDirectoryA</I>
+</TD><TD>shlwapi.dll</TD><TD>ByVal pszPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+PathIsRoot
+<BR><I>As&nbsp;PathIsRootA</I>
+</TD><TD>shlwapi.dll</TD><TD>ByVal pszPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetFilePointer
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>ByVal lDistanceToMove As Long,<BR>lpDistanceToMoveHigh As Long,<BR>ByVal dwMoveMethod As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+ReadFile
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>lpBuffer As Any,<BR>ByVal nNumberOfBytesToRead As Long,<BR>lpNumberOfBytesRead As Long,<BR>ByVal lpOverlapped As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetFileInformationByHandle
+</TD><TD>kernel32</TD><TD>ByVal hFile As Long,<BR>lpFileInformation As BY_HANDLE_FILE_INFORMATION&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetShortPathName
+<BR><I>As&nbsp;GetShortPathNameA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpszLongPath As String,<BR>ByVal lpszShortPath As String,<BR>ByVal lBuffer As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FindExecutable
+<BR><I>As&nbsp;FindExecutableA</I>
+</TD><TD>Shell32.dll</TD><TD>ByVal lpFile As String,<BR>ByVal lpDirectory As String,<BR>ByVal lpResult As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetCompressedFileSizeAPI
+<BR><I>As&nbsp;GetCompressedFileSizeA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpFileName As String,<BR>lpFileSizeHigh As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FindNextFile
+<BR><I>As&nbsp;FindNextFileA</I>
+</TD><TD>kernel32.dll</TD><TD>ByVal hFindFile As Long,<BR>lpFindFileData As WIN32_FIND_DATA&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+PathFindExtension
+<BR><I>As&nbsp;PathFindExtensionA</I>
+</TD><TD>shlwapi</TD><TD>ByVal pPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+lstrcpyA
+</TD><TD>kernel32</TD><TD>ByVal RetVal As String,<BR>ByVal ptr As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+lstrlenA
+</TD><TD>kernel32</TD><TD>ByVal ptr As Any&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PathStripPath
+<BR><I>As&nbsp;PathStripPathA</I>
+</TD><TD>shlwapi.dll</TD><TD>ByVal pszPath As String&nbsp;</TD><TD>
+N/A
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+PathRemoveFileSpec
+<BR><I>As&nbsp;PathRemoveFileSpecA</I>
+</TD><TD>shlwapi</TD><TD>ByVal pPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PathRemoveBackslash
+<BR><I>As&nbsp;PathRemoveBackslashA</I>
+</TD><TD>shlwapi.dll</TD><TD>ByVal pszPath As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+ShellExecuteEX
+<BR><I>As&nbsp;ShellExecuteEx</I>
+</TD><TD>Shell32.dll</TD><TD>SEI As SHELLEXECUTEINFO&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SHRunDialog
+<BR><I>As&nbsp;#61</I>
+</TD><TD>shell32</TD><TD>ByVal hOwner As Long,<BR>ByVal Unknown1 As Long,<BR>ByVal Unknown2 As Long,<BR>ByVal szTitle As String,<BR>ByVal szPrompt As String,<BR>ByVal uFlags As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+GetOpenFileName
+<BR><I>As&nbsp;GetOpenFileNameA</I>
+</TD><TD>comdlg32.dll</TD><TD>pOpenfilename As OPENFILENAME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetSaveFileName
+<BR><I>As&nbsp;GetSaveFileNameA</I>
+</TD><TD>comdlg32.dll</TD><TD>pOpenfilename As OPENFILENAME&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+CoTaskMemFree
+</TD><TD>ole32.dll</TD><TD>ByVal hMem As Long&nbsp;</TD><TD>
+N/A
+</TD><TD>Public
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ShellExecute
+<BR><I>As&nbsp;ShellExecuteA</I>
+</TD><TD>Shell32.dll</TD><TD>ByVal hWnd As Long,<BR>ByVal lpOperation As String,<BR>ByVal lpFile As String,<BR>ByVal lpParameters As String,<BR>ByVal lpDirectory As String,<BR>ByVal nShowCmd As Long&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+<TR><TD>
+MoveFileAPI
+<BR><I>As&nbsp;MoveFileA</I>
+</TD><TD>kernel32</TD><TD>ByVal lpExistingFileName As String,<BR>ByVal lpNewFileName As String&nbsp;</TD><TD>
+Long
+</TD><TD>Public
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

@@ -1,0 +1,350 @@
+/* Couleurs :
+Principale : #7375d3
+Fond : #f0f1f3
+*/
+
+
+BODY {
+	font-style: normal;
+	font-size: 11px;
+	font-family: Verdana, Tahoma, Arial, sans-serif;
+	background-color: #F0F1F3;
+	color: black;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* La structure de la page */
+#Header {
+	top: 0px;
+	height: 150px;
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	overflow: hidden;
+	background-image: url(images/fond.gif);
+	background-repeat: repeat-x;
+	text-align: center;
+}
+#Menu {
+	position: absolute;
+	top: 100px;
+	margin-left: 10px;
+	left: 0px;
+	width: 162px;
+}
+#PageContent {
+	position: relative;
+	top: 140px;
+	padding-left: 172px;
+	margin: 10px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les Liens */
+A:link {
+	color: #11589B;
+	text-decoration: none;
+}
+A:visited {
+	color: #11589B;
+	text-decoration: none;
+}
+A:hover {
+	color: #11589B;
+	text-decoration: underline overline;
+}
+A:link.Menu {
+	color: #2B295B;
+	font-weight: bold;
+	font-size: 12px;
+}
+A:visited.Menu {
+	color: #2B295B;
+	font-weight: bold;
+	font-size: 12px;
+}
+A:hover.Menu {
+	color: #2B295B;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Le texte */
+#Text {
+	font-weight: normal;
+	text-align: left;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* La mise en forme du texte */
+P {
+	text-indent: 20px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les Titres */
+/* Titres des fenêtres */
+h1 {
+	font-weight: bold;
+	font-size: 12px;
+	text-align: left;
+	color: #2B295B;
+	margin-top: 0px;
+}
+/* Titres des petites fenêtres */
+h2 {
+	font-weight: bold;
+	font-size: 11px;
+	color: white;
+	margin-top: 0px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Le Menu */
+Div.BoutonMenu {
+	background-image: url("images/bouton.gif");
+	background-repeat: no-repeat;
+	width: 154px;
+	height: 15px;
+	padding: 4px;
+	text-align: left;
+	text-indent: 4px;
+	/* L'écartement entre les boutons */
+	margin-top: 0px;
+	/* Si le texte est trop long on le coupe */
+	overflow: hidden;
+}
+Div.BoutonMenuTop {
+	width: 154px;
+	height: 64px;
+	padding: 4px;
+	text-align: center;
+	/* L'écartement entre les boutons */
+	margin-top: 0px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les Fenêtres */
+Div.Window {
+	width: 98%;
+}
+Div.WindowTitle {
+	text-indent: 5px;
+	text-align: left;
+	background-image: url("images/windowtitle_middle.gif");
+	background-repeat: repeat-x;
+	height: 15px;
+	overflow: hidden;
+}
+Div.WindowTitle_Left {
+	float: left;
+	background-image: url("images/windowtitle_left.gif");
+	background-repeat: no-repeat;
+	height: 15px;
+	overflow: visible;
+	width: 28px;
+}
+Div.WindowTitle_Right {
+	float: right;
+	background-image: url("images/windowtitle_right.gif");
+	background-repeat: no-repeat;
+	height: 15px;
+	width: 28px;
+}
+Div.WindowText {
+	font-weight: normal;
+	text-align: left;
+	border-color:#b8b9e9;
+	border-style:solid;
+	border-width: 0px 1px 1px 1px;
+	background-color: white;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+Div.WindowSeparateur {
+	width: 90%;
+	border-style: none;
+	height: 20px;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Pour les formulaires : couleur de fond */
+.Clair {
+	background: #E3E3F8;
+}
+
+
+/*/////////////////////////////////////////////////////////////////*/
+/* La liste des codes */
+table.codeTable {
+	text-align: left;
+	width: 95%;
+	background-color: #E3E3F8;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+th.codeTitle {
+	font-weight: bold;
+	font-size: 12px;
+	color: #2B295B;
+	background-color: #B2B1DB;
+	border-color: #7375d3;
+	border-width: 1px;
+	border-style: solid;
+}
+td.codeText {
+	font-weight: normal;
+	font-size: 11px;
+	padding: 3px;
+	background-color: white;
+	border-color: #B2B1DB;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les aperçus des news */
+p.PreviewNews {
+	font-weight: normal;
+	font-size: 9px;
+	text-align: left;
+	margin-top: -8px;
+	margin-bottom: 4px;
+}
+span.PreviewNews_Date {
+	font-weight: normal;
+	font-size: 9px;
+}
+div.PreviewNews {
+	border-style: solid;
+	border-color: #c0c1ef;
+	border-width: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+h3.previewNews {
+	font-size: 13px;
+}
+/* Les news */
+p.News {
+	font-weight: normal;
+	font-size: 11px;
+	text-align: left;
+	color: black;
+}
+span.News_Date {
+	font-weight: normal;
+	font-size: 10px;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Liste des membres */
+Table.ListeMembres {
+	text-align: left;
+	width: 90%
+}
+th.ListeMembres {
+	text-align: center;
+	font-weight: bold;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Afficher un bout de code */
+P.Code {
+	background-color: #E9E9E9;
+	font-family: Courier New;
+	font-size: 12px;
+	text-align: left;
+	overflow: auto;
+	width: 100%;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les liens pour télécharger */
+P.urlDL {
+	text-align: center;
+	font-size: large;
+	font-weight: bold
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* La liste des updates */
+table.updatesTable {
+	text-align: left;
+	width: 95%;
+	background-color: #E3E3F8;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+}
+th.updatesTitle {
+	font-weight: bold;
+	font-size: 12px;
+	color: #2B295B;
+	background-color: #B2B1DB;
+	border-color: #7375d3;
+	border-width: 1px;
+	border-style: solid;
+}
+td.updatesText {
+	font-weight: normal;
+	font-size: 11px;
+	padding: 3px;
+	background-color: white;
+	border-color: #B2B1DB;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/*/////////////////////////////////////////////////////////////////*/
+/* Les form du menu */
+
+h2.frmMenu {
+	text-indent: 0;
+	top: 0;
+	margin-top: -1px;
+	margin-bottom: 10px;
+	text-align: center
+}
+
+div.frmMenu {
+	font-weight: normal;
+	font-size: 10px;
+	background-image: url("images/fenetre.gif");
+	background-repeat: no-repeat;
+	background-color: white;
+	width: 136px;
+	height: 122px;
+	text-align: left;
+	text-indent: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 13px;
+	padding-right: 13px;
+	/* L'écartement avec les boutons du dessus */
+	margin-top: 10px;
+	/* Si le texte est trop long on le coupe */
+	overflow: hidden;
+}
+
+p.frmMenu {
+	text-indent: 0px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+/* La form de login */
+input.frmLogin {
+	font-size: 10px;
+	font-family: Verdana, Tahoma;
+}
+form.frmLogin {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}

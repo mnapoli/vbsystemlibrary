@@ -1,0 +1,108 @@
+<HTML>
+<HEAD>
+
+<script language='JavaScript' type='text/javascript'>
+
+var aNameValuePair = location.search.substring(1,location.search.length).split("&");
+var aParam = new Array(aNameValuePair.length);
+for ( var i=0; i<aNameValuePair.length; i++ ) {
+   param = aNameValuePair[i].split("=");
+   aParam[param[0]] = aParam[i] = { name: param[0], value: unescape(param[1].replace('+', ' ')) };
+   }
+   
+language = aParam[0].value;
+rte = aParam[1].value;    
+
+if (language == 'FR') {
+   document.writeln('<title>Choix d\'un Smiley</title>');
+   }
+if (language == 'EN') {
+   document.writeln('<title>Smiley Picker</title>');
+   }
+
+function insertSmiley(img) {
+   if (img) {
+      window.opener.document.getElementById(rte).contentWindow.focus();
+      window.opener.document.getElementById(rte).contentWindow.document.execCommand('InsertImage', false, img);
+	  window.close();
+	  }
+   }
+
+function InitArray() {
+   if (document.getElementsByTagName)
+	  var x = document.getElementsByTagName('TD');
+   else if (document.all)
+	  var x = document.all.tags('TD');
+   for (var i=0;i<x.length;i++) {
+	  x[i].onmouseover = over;
+      x[i].onmouseout = out;
+      }
+   }
+	
+function over() {
+   this.style.border='1px dotted white';
+   }
+	
+function out() {
+   this.style.border='1px solid gray';
+   }
+
+</script>
+
+</HEAD>
+
+
+<body bgcolor="white" onLoad="InitArray()" leftmargin="0" rightmargin="0" marginwidth="0" marginheight="0" topmargin="0" bottommargin="0">
+<table width="250" height="170" cellpadding="0" cellspacing="1" border="1" align="center">
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley1.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley2.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley3.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley4.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley5.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley6.gif'></td>
+	</tr>
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley7.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley8.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley9.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley10.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley11.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley12.gif'></td>
+	</tr>
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley13.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley14.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley15.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley16.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley17.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley18.gif'></td>
+	</tr>
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley19.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley20.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley21.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley22.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley23.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley24.gif'></td>
+	</tr>
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley25.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley26.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley27.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley28.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley29.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley30.gif'></td>
+	</tr>
+	<tr>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley31.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley32.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley33.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley34.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley35.gif'></td>
+<td width="40" height="20" align=center><img onclick="insertSmiley(this.src)" border=0 src='images/smileys/smiley36.gif'></td>
+	</tr>
+</table>
+</body>
+</html>
+

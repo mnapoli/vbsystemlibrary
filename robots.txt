@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /passwords/
+Disallow: /log/
+Disallow: /functions/
+Disallow: /admin.php
+Disallow: /deletecode.php
+Disallow: /error.php
+Disallow: /functions.php
+Disallow: /log.php

@@ -1,0 +1,252 @@
+<HTML><HEADER><TITLE>CLASSE : Drive</TITLE>
+<META NAME='Description' CONTENT='Documentation du projet VbSysLib-2.0.1'>
+<META NAME='Author' CONTENT='S&eacute;bastien FERRAND'>
+<META NAME='Identifier-URL' CONTENT='http://vbMaf.fr.st'>
+<META NAME='Reply-to' CONTENT='sebastien.ferrand@tiscali.fr'>
+<META NAME='Category' CONTENT='Visual Basic'>  
+<META NAME='Copyright' CONTENT='S&eacute;bastien FERRAND, sebastien.ferrand@tiscali.fr'>
+<META NAME='Generator' CONTENT='vbAutoDoc-0.3.5'>
+<LINK REL='STYLESHEET' TYPE='text/css' HREF='style.css'>
+</HEAD>
+
+<BODY><H1>CLASSE : Drive</H1>
+<H2><A NAME="functions">Fonctions</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type de retour</TH></TR>
+<TR><TD>
+SetVolumeLetter
+</TD><TD>Friend
+</TD><TD>VolumeLetter As String,<BR>Optional ByVal RefreshInformations As Boolean = True&nbsp;</TD><TD>
+Variant
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+IsDriveAvailable
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Boolean
+</TD></TR>
+<TR><TD>
+ShowPropertyBox
+</TD><TD>Public
+</TD><TD>ByVal hWnd As Long&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+ReadDriveString
+</TD><TD>Public
+</TD><TD>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long&nbsp;</TD><TD>
+String
+</TD></TR>
+<TR><TD>
+WriteDriveString
+</TD><TD>Public
+</TD><TD>ByVal StartingSector As Currency,<BR>ByVal nBytes As Long,<BR>ByVal StringToWrite As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+GetIcon
+</TD><TD>Public
+</TD><TD>ByVal Size As IconSize&nbsp;</TD><TD>
+IPictureDisp
+</TD></TR>
+<TR><TD>
+Sanitize
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SetVolumeLabel
+</TD><TD>Public
+</TD><TD>NewLabel As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+<TR><TD>
+CreateIso
+</TD><TD>Public
+</TD><TD>IsoDestination As String&nbsp;</TD><TD>
+Long
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="subs">Proc&eacute;dures</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH></TR>
+<TR><TD>
+RefreshInfos
+</TD><TD>Public
+</TD><TD>&nbsp;
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+Class_Initialize
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+<TR><TD>
+Class_Terminate
+</TD><TD>Private
+</TD><TD>&nbsp;
+</TD></TR>
+</TABLE>
+<P>
+<H2><A NAME="propriete">Propri&eacute;t&eacute;s</H2>
+
+<TABLE CELLPADDING=5 CELLSPACING=0>
+<TR><TH>Nom</TH><TH>Port&eacute;e</TH><TH>Param&egrave;tres</TH><TH>Type</TH></TR>
+<TR><TD>
+Cylinders
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+TracksPerCylinder
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+SectorsPerTrack
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+PercentageFree
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+FreeSpace
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+UsedSpace
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+UsedClusters
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+StartingOffset
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TotalSpace
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+SectorPerCluster
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+BytesPerSector
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FreeClusters
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TotalClusters
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+TotalLogicalSectors
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+TotalPhysicalSectors
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+VolumeLetter
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get / Let
+</TD></TR>
+<TR><TD>
+BytesPerCluster
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+HiddenSectors
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+PartitionLength
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+VolumeName
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+VolumeSerialNumber
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+FileSystemName
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+strMediaType
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR STYLE="background:#EEEEEE;"><TD>
+DriveType
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+<TR><TD>
+strDriveType
+</TD><TD>Public
+</TD><TD>&nbsp;</TD><TD>
+Get
+</TD></TR>
+</TABLE>
+<P>
+<HR><SMALL>&copy; Copyright 2003, <A HREF='mailto:sebastien.ferrand@tiscali.fr?subject=vbAutoDoc-0.3.5'>Sébastien FERRAND</A>
+, documentation générée par <A HREF='http://vbMaf.fr.st' TARGET=_new>vbAutoDoc-0.3.5</A>, le 2007/05/01
+</BODY></HTML>

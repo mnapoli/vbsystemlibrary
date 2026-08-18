@@ -1,0 +1,4 @@
+ErrorDocument 401 /VbSystemLibrary/error.php?Descr=Erreur 401 : Accès non autorisé
+ErrorDocument 403 /VbSystemLibrary/error.php?Descr=Erreur 403 : Accès interdit
+ErrorDocument 404 /VbSystemLibrary/error.php?Descr=Erreur 404 : Page non trouvée
+ErrorDocument 500 /VbSystemLibrary/error.php?Descr=Erreur 500 : Erreur interne

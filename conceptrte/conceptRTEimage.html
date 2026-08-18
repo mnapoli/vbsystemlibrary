@@ -1,0 +1,61 @@
+<html>
+<head>
+<link rel='STYLESHEET' type='text/css' href='style.css'>
+<script language='JavaScript' type='text/javascript'>
+
+var aNameValuePair = location.search.substring(1,location.search.length).split("&");
+var aParam = new Array(aNameValuePair.length);
+for ( var i=0; i<aNameValuePair.length; i++ ) {
+   param = aNameValuePair[i].split("=");
+   aParam[param[0]] = aParam[i] = { name: param[0], value: unescape(param[1].replace('+', ' ')) };
+   }
+   
+language = aParam[0].value;
+rte = aParam[1].value;    
+
+if (language == 'FR') {
+   document.writeln('<title>Choix d\'une Image</title>');
+   sentenceTitle = "Entrez l'url de l'image à inserer dans l'éditeur.";
+   sentenceInsert = "Cliquez sur l'image pour mettre à jour l'éditeur.";
+   }
+if (language == 'EN') {
+   document.writeln('<title>Image Picker</title>');
+   sentenceTitle = "Enter the URL of the image to be inserted in the editor.";
+   sentenceInsert = "Once displayed, click on the preview to update the editor.";
+   }
+
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup>' + sentenceTitle + '</div>');
+document.writeln('<div class=rowPopup>' + sentenceInsert + '</div>');
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup>');
+document.writeln('   <span class=labelPopup>http://</span>');
+document.writeln('   <span class=fieldPopup><input name="urlImage" id="urlImage" type="text" size="70" onKeyUp="updateImageFunction()"></span>');
+document.writeln('</div>');
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup><img name="imagePreview" src="" style="visibility:hidden;cursor:pointer;cursor:hand" onClick="insertImageFunction()"></div>');
+document.getElementById('urlImage').focus();
+
+function insertImageFunction() {
+   imagePath = "http://" + document.getElementById('urlImage').value;
+   window.opener.document.getElementById(rte).contentWindow.focus();
+   window.opener.document.getElementById(rte).contentWindow.document.execCommand('InsertImage', false, imagePath);
+   window.close();
+   }
+
+function updateImageFunction() {
+   document.imagePreview.style.visibility = "hidden";
+   document.imagePreview.onload = imageLoaded;
+   document.imagePreview.src = "http://" + document.getElementById('urlImage').value;
+   }
+
+function imageLoaded() {
+   document.imagePreview.style.visibility = "visible";
+}
+ 
+</script> 
+</head>
+<body>
+</body>
+</html>
+

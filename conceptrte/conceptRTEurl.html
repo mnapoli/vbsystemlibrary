@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel='STYLESHEET' type='text/css' href='style.css'>
+<script language='JavaScript' type='text/javascript'>
+
+var aNameValuePair = location.search.substring(1,location.search.length).split("&");
+var aParam = new Array(aNameValuePair.length);
+for ( var i=0; i<aNameValuePair.length; i++ ) {
+   param = aNameValuePair[i].split("=");
+   aParam[param[0]] = aParam[i] = { name: param[0], value: unescape(param[1].replace('+', ' ')) };
+   }
+   
+language = aParam[0].value;
+rte = aParam[1].value;    
+
+if (language == 'FR') {
+   document.writeln('<title>Choix d\'une URL</title>');
+   sentenceTitle = "Entrez l'url du lien à inserer dans l'éditeur.";
+   sentencePreview = "Voir";
+   sentenceAction  = "Ok";   
+   }
+if (language == 'EN') {
+   document.writeln('<title>URL Picker</title>');
+   sentenceTitle = "Enter the URL of the link to be inserted in the editor.";
+   sentencePreview = "Preview";
+   sentenceAction  = "Ok";
+   }
+
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup>' + sentenceTitle + '</div>');
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup>');
+document.writeln('   <span class=labelPopup>http://</span>');
+document.writeln('   <span class=fieldPopup><input name="url" id="url" type="text" size="55">&nbsp;<input type="button" class="button" value="' + sentencePreview + '" onClick="previewUrlFunction()">&nbsp;<input type="button" class="button" value="' + sentenceAction + '" onClick="insertUrlFunction()"></span>');
+document.writeln('</div>');
+document.writeln('<div class=rowPopup>&nbsp;</div>');
+document.writeln('<div class=rowPopup><iframe name="urlPreview" id="urlPreview" src="" height="270" width="450" framebroder=0 style="visibility:hidden"></div>');
+document.getElementById('url').focus();
+
+function insertUrlFunction() {
+   urlPath = "http://" + document.getElementById('url').value;
+   window.opener.document.getElementById(rte).contentWindow.focus();
+   window.opener.document.getElementById(rte).contentWindow.document.execCommand("Unlink", false, null);
+   window.opener.document.getElementById(rte).contentWindow.document.execCommand("CreateLink", false, urlPath);
+   window.close();
+   }
+
+function previewUrlFunction() {
+   document.getElementById('urlPreview').style.visibility = "visible";
+   document.getElementById('urlPreview').src = "http://" + document.getElementById('url').value; 
+   }
+
+</script> 
+</head>
+<body>
+</body>
+</html>
+
