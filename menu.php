@@ -120,11 +120,11 @@
 		}
 	?>
 
-	<!--<div class="BoutonMenu">
+	<div class="BoutonMenu">
 		<a class="Menu" href="livredor.php">
 			Livre d'or
 		</a>
-	</div>-->
+	</div>
 	
 	<div class="BoutonMenu">
 		<a class="Menu" href="partenaires.php">
