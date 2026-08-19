@@ -1,0 +1,8 @@
+{
+    "name": "vbsyslib",
+    "private": true,
+    "description": "Serverless Framework plugins for deploying VbSystemLibrary (Bref + Lift).",
+    "devDependencies": {
+        "serverless-lift": "^1.37.7"
+    }
+}

@@ -16,9 +16,34 @@ functions:
         image:
             name: vbsyslib
         memorySize: 512
-        timeout: 5
+        # Le premier appel démarre php-cgi 5.6 (SAPI CGI) : on laisse de la marge
+        # pour éviter un 500 au démarrage à froid. Plafond API Gateway = 30 s.
+        timeout: 28
         events:
             -   httpApi: '*'
+
+# Site côté serveur (https://bref.sh/docs/use-cases/websites) :
+# CloudFront sert de CDN + reverse proxy. Les fichiers statiques lourds partent
+# sur S3 ; tout le reste est transmis à la fonction Lambda (le PHP). Les chemins
+# non listés ici (ex. forum/forum.css, documentation/*) retombent donc sur
+# Lambda, où le proxy les sert très bien.
+constructs:
+    website:
+        type: server-side-website
+        # Nom de domaine + certificat ACM (obligatoirement en us-east-1 pour
+        # CloudFront). Le record DNS (CNAME) est à créer dans Cloudflare vers
+        # l'URL CloudFront affichée au déploiement.
+        domain: vbsystemlibrary.mnapoli.fr
+        certificate: arn:aws:acm:us-east-1:416566615250:certificate/05f5f9e1-b896-4725-96e3-6f143d06ac0b
+        assets:
+            '/style.css': style.css
+            '/styledoc.css': styledoc.css
+            '/favicon.ico': favicon.ico
+            '/robots.txt': robots.txt
+            '/images/*': images
+            '/files/*': files
+            '/users/*': users
+            '/conceptrte/*': conceptrte
 
 package:
     # NB : ce projet se déploie en IMAGE container (fonction `image:`).
@@ -39,3 +64,4 @@ package:
 
 plugins:
     - ./vendor/bref/bref
+    - serverless-lift

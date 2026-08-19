@@ -82,11 +82,15 @@ final class Php56Proxy
         $type = self::STATIC_TYPES[$ext] ?? 'application/octet-stream';
         $data = (string) file_get_contents($file);
         $isText = str_starts_with($type, 'text/') || $type === 'application/javascript' || $type === 'application/json';
+        // Corps TOUJOURS brut (jamais pré-encodé) : Bref base64-encode la réponse
+        // entière une seule fois via BREF_BINARY_RESPONSES=1 (cf. Dockerfile), ce
+        // qui préserve les octets exacts, latin1 comme binaire. Encoder ici en
+        // plus donnerait un double encodage (images cassées).
         return [
             'status' => 200,
             'headers' => ['Content-Type' => $type . ($isText ? '; charset=iso-8859-1' : '')],
-            'body' => $isText ? $data : base64_encode($data),
-            'base64' => !$isText,
+            'body' => $data,
+            'base64' => false,
         ];
     }
 

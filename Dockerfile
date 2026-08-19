@@ -72,5 +72,12 @@ ENV VBSYSLIB_DOCROOT=/var/task \
 # Requis par le bootstrap du conteneur Bref v3 (/opt/bref/bootstrap.php).
 ENV BREF_RUNTIME=function
 
+# Réponses binaires : Bref base64-encode TOUTE la réponse (isBase64Encoded)
+# une seule fois. Indispensable ici car le PHP du site produit du latin1
+# (ISO-8859-1), dont les octets ne sont pas de l'UTF-8 valide et casseraient
+# le json_encode de la réponse Lambda. Le proxy renvoie donc des octets bruts
+# (jamais pré-encodés) et Bref s'occupe de l'encodage. Voir Php56Proxy.php.
+ENV BREF_BINARY_RESPONSES=1
+
 # Handler Bref (runtime "function") : runtime/handler.php
 CMD ["runtime/handler.php"]

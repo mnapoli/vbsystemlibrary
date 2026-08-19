@@ -19,11 +19,15 @@ jobs:
         steps:
             -   uses: actions/checkout@v7
 
-            # Node is the runtime for the Serverless Framework that Bref Cloud
-            # drives under the hood (no npm packages of our own to install).
+            # Node runs the Serverless Framework that Bref Cloud drives under the
+            # hood, and hosts the serverless-lift plugin (CloudFront + S3 website).
             -   uses: actions/setup-node@v7
                 with:
                     node-version: '18'
+                    cache: 'npm'
+
+            # Installs serverless-lift (the `website` construct in serverless.yml).
+            -   run: npm ci
 
             -   name: Setup PHP and the Bref CLI
                 uses: shivammathur/setup-php@v2
