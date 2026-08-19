@@ -68,5 +68,9 @@ ENV VBSYSLIB_DOCROOT=/var/task \
     VBSYSLIB_PHP_INI=/var/task/config/php-legacy.ini \
     VBSYSLIB_SQLITE=/var/task/data/vbsyslib.sqlite
 
+# Runtime Bref v3 : "function" (notre classe HttpHandler, et non PHP-FPM).
+# Requis par le bootstrap du conteneur Bref v3 (/opt/bref/bootstrap.php).
+ENV BREF_RUNTIME=function
+
 # Handler Bref (runtime "function") : runtime/handler.php
 CMD ["runtime/handler.php"]
