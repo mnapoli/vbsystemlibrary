@@ -19,10 +19,6 @@ functions:
         # Le premier appel démarre php-cgi 5.6 (SAPI CGI) : on laisse de la marge
         # pour éviter un 500 au démarrage à froid. Plafond API Gateway = 30 s.
         timeout: 28
-        # Plafond d'exécutions simultanées : maîtrise les coûts (un pic de trafic
-        # ou un abus ne peut pas déclencher un scaling illimité). Au-delà, les
-        # requêtes sont throttlées (429). Le statique passe par S3/CloudFront et
-        # ne consomme pas la Lambda. Ajustable librement.
         reservedConcurrency: 10
         events:
             -   httpApi: '*'
