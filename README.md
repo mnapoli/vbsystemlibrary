@@ -5,6 +5,8 @@ first website I ever wrote, in 2007: a community library of Visual Basic code
 (Windows system access through the API), with a forum, comments, news and a
 guestbook.
 
+New URL: https://vbsystemlibrary.mnapoli.fr/
+
 The site ran on PHP 4/5 + MySQL on Free's personal hosting. After Free upgraded PHP
 in 2026, it started returning a 500 error, and the database had been deleted. This
 repository brings it back to life **read only**, on AWS Lambda.
