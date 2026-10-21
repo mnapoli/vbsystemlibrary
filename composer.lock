@@ -8,22 +8,22 @@
     "packages": [
         {
             "name": "bref/bref",
-            "version": "3.0.9",
+            "version": "3.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brefphp/bref.git",
-                "reference": "0d899c6a2122519d4b69f80ef20503007cccafbc"
+                "reference": "3b1dbda5680930187bd44b7c863429e570b35692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/bref/zipball/0d899c6a2122519d4b69f80ef20503007cccafbc",
-                "reference": "0d899c6a2122519d4b69f80ef20503007cccafbc",
+                "url": "https://api.github.com/repos/brefphp/bref/zipball/3b1dbda5680930187bd44b7c863429e570b35692",
+                "reference": "3b1dbda5680930187bd44b7c863429e570b35692",
                 "shasum": ""
             },
             "require": {
                 "crwlr/query-string": "^1.0.3",
                 "ext-curl": "*",
-                "hollodotme/fast-cgi-client": "^3.0.1",
+                "hollodotme/fast-cgi-client": "^4.0",
                 "nyholm/psr7": "^1.4.1",
                 "php": ">=8.2",
                 "psr/container": "^1.0|^2.0",
@@ -69,7 +69,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brefphp/bref/issues",
-                "source": "https://github.com/brefphp/bref/tree/3.0.9"
+                "source": "https://github.com/brefphp/bref/tree/3.0.14"
             },
             "funding": [
                 {
@@ -81,7 +81,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-04T08:22:56+00:00"
+            "time": "2026-10-21T14:07:00+00:00"
         },
         {
             "name": "crwlr/query-string",
@@ -142,24 +142,28 @@
         },
         {
             "name": "hollodotme/fast-cgi-client",
-            "version": "v3.1.7",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hollodotme/fast-cgi-client.git",
-                "reference": "062182d4eda73c161cc2839783acc83096ec0f37"
+                "reference": "b65cb9ba2f12ad456478813fe1550022b171dc9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/062182d4eda73c161cc2839783acc83096ec0f37",
-                "reference": "062182d4eda73c161cc2839783acc83096ec0f37",
+                "url": "https://api.github.com/repos/hollodotme/fast-cgi-client/zipball/b65cb9ba2f12ad456478813fe1550022b171dc9f",
+                "reference": "b65cb9ba2f12ad456478813fe1550022b171dc9f",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
                 "ext-json": "*",
-                "php": ">=7.1"
+                "php": ">=8.0"
             },
             "require-dev": {
-                "ext-xdebug": ">=2.6.0"
+                "ext-xdebug": ">=3.1",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^9",
+                "squizlabs/php_codesniffer": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -186,9 +190,15 @@
             ],
             "support": {
                 "issues": "https://github.com/hollodotme/fast-cgi-client/issues",
-                "source": "https://github.com/hollodotme/fast-cgi-client/tree/v3.1.7"
+                "source": "https://github.com/hollodotme/fast-cgi-client/tree/v4.0.0"
             },
-            "time": "2021-12-07T10:10:20+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/hollodotme",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-10-05T12:05:19+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -543,16 +553,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v7.4.13",
+            "version": "v7.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "f5804be144caceb570f6747519999636b664f24c"
+                "reference": "e5247f4a5e0797d232ad8e8e6803aeb341843c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/f5804be144caceb570f6747519999636b664f24c",
-                "reference": "f5804be144caceb570f6747519999636b664f24c",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e5247f4a5e0797d232ad8e8e6803aeb341843c83",
+                "reference": "e5247f4a5e0797d232ad8e8e6803aeb341843c83",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +594,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v7.4.13"
+                "source": "https://github.com/symfony/process/tree/v7.4.21"
             },
             "funding": [
                 {
@@ -604,7 +614,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-23T16:05:06+00:00"
+            "time": "2026-10-08T16:56:12+00:00"
         }
     ],
     "packages-dev": [],

@@ -10,6 +10,9 @@ provider:
         images:
             vbsyslib:
                 path: .
+                # Toujours re-télécharger les images de base (bref/php-83:3,
+                # amazonlinux, composer) pour embarquer les correctifs de sécurité PHP.
+                buildOptions: ['--pull']
 
 functions:
     web:
