@@ -34,6 +34,18 @@ final class Php56Proxy
         'json' => 'application/json',
     ];
 
+    /*
+     * Garde-fous devant php-cgi 5.6, qui ne reçoit plus de correctifs de
+     * sécurité. Archive en lecture seule : aucun formulaire n'a d'usage (ce
+     * sont tous des écritures, et les mots de passe ont été purgés de la
+     * base), donc seuls GET et HEAD passent, sans corps, sans cookie. On
+     * réduit ainsi au minimum ce que php-cgi parse au démarrage de la requête.
+     */
+    private const MAX_QUERY_STRING = 4096;
+    private const MAX_HEADERS_SIZE = 16384;
+    /** Seuls en-têtes transmis à php-cgi (le site ne lit que ceux-là). */
+    private const FORWARDED_HEADERS = ['host', 'user-agent', 'accept', 'accept-language', 'referer', 'x-forwarded-for'];
+
     public function __construct(string $docRoot, string $phpCgi, string $phpIni)
     {
         $this->docRoot = rtrim($docRoot, '/');
@@ -42,11 +54,31 @@ final class Php56Proxy
     }
 
     /**
-     * @param array<string,string> $headers  En-têtes de requête (clé => valeur)
+     * Le corps de la requête n'est jamais lu : seuls GET et HEAD sont acceptés.
+     *
+     * @param array<string,string> $headers  En-têtes de requête (clé en minuscules => valeur)
      * @return array{status:int, headers:array<string,string>, body:string, base64:bool}
      */
-    public function handle(string $method, string $path, string $query, array $headers, string $body): array
+    public function handle(string $method, string $path, string $query, array $headers): array
     {
+        $method = strtoupper($method);
+        if ($method !== 'GET' && $method !== 'HEAD') {
+            $response = $this->plain(405, '405 Method Not Allowed');
+            $response['headers']['Allow'] = 'GET, HEAD';
+            return $response;
+        }
+        if (strlen($query) > self::MAX_QUERY_STRING) {
+            return $this->plain(414, '414 URI Too Long');
+        }
+        $headersSize = 0;
+        foreach ($headers as $name => $value) {
+            $headersSize += strlen($name) + strlen($value) + 4;
+        }
+        if ($headersSize > self::MAX_HEADERS_SIZE) {
+            return $this->plain(431, '431 Request Header Fields Too Large');
+        }
+        $headers = array_intersect_key($headers, array_flip(self::FORWARDED_HEADERS));
+
         $path = '/' . ltrim(rawurldecode($path), '/');
 
         // Résolution du fichier cible, en interdisant la sortie de la racine.
@@ -59,7 +91,7 @@ final class Php56Proxy
         if ($ext !== 'php') {
             return $this->serveStatic($target, $ext);
         }
-        return $this->runCgi($method, $path, $query, $headers, $body, $target);
+        return $this->runCgi($method, $path, $query, $headers, $target);
     }
 
     /** Résout un chemin URL en fichier réel dans la racine (ou null). */
@@ -95,7 +127,7 @@ final class Php56Proxy
     }
 
     /** Exécute php-cgi 5.6 et parse sa sortie. */
-    private function runCgi(string $method, string $path, string $query, array $headers, string $body, string $scriptFile): array
+    private function runCgi(string $method, string $path, string $query, array $headers, string $scriptFile): array
     {
         $env = [
             'GATEWAY_INTERFACE' => 'CGI/1.1',
@@ -117,10 +149,7 @@ final class Php56Proxy
             'LD_LIBRARY_PATH'   => getenv('LD_LIBRARY_PATH') ?: '',
             'PATH'              => getenv('PATH') ?: '/usr/bin:/bin',
         ];
-        if ($body !== '') {
-            $env['CONTENT_LENGTH'] = (string) strlen($body);
-            $env['CONTENT_TYPE'] = $headers['content-type'] ?? 'application/x-www-form-urlencoded';
-        }
+        // Ni CONTENT_LENGTH ni CONTENT_TYPE : php-cgi ne parse aucun corps.
         foreach ($headers as $k => $v) {
             $env['HTTP_' . strtoupper(str_replace('-', '_', $k))] = $v;
         }
@@ -133,8 +162,7 @@ final class Php56Proxy
         if (!is_resource($proc)) {
             return $this->plain(500, '500 - php-cgi introuvable');
         }
-        fwrite($pipes[0], $body);
-        fclose($pipes[0]);
+        fclose($pipes[0]); // stdin vide : aucun corps transmis
         $out = stream_get_contents($pipes[1]);
         $err = stream_get_contents($pipes[2]);
         fclose($pipes[1]);

@@ -28,16 +28,12 @@ foreach ($_SERVER as $k => $v) {
         $headers[$name] = (string) $v;
     }
 }
-if (isset($_SERVER['CONTENT_TYPE'])) {
-    $headers['content-type'] = (string) $_SERVER['CONTENT_TYPE'];
-}
 
 $result = $proxy->handle(
     $_SERVER['REQUEST_METHOD'] ?? 'GET',
     parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/',
     $_SERVER['QUERY_STRING'] ?? '',
-    $headers,
-    file_get_contents('php://input') ?: ''
+    $headers
 );
 
 http_response_code($result['status']);

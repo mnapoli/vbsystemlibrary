@@ -42,8 +42,7 @@ return new class extends HttpHandler {
             $event->getMethod(),
             $event->getPath(),
             $event->getQueryString(),
-            $headers,
-            $event->getBody()
+            $headers
         );
 
         return new HttpResponse($result['body'], $result['headers'], $result['status']);
